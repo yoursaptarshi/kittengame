@@ -33,7 +33,7 @@ exports.getOtp = async(req,res)=>{
                   },
             });
             const subject = 'Your OTP for Site'
-            const link = `http://127.0.0.1:3000/register/${email}`
+            const link = `https://explodingkitten.onrender.com/register/${email}`
             await sendEmail({name,email,subject,otp,link})
 
             const token = await user.generateToken();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import {Drawer,IconButton} from '@mui/material'
 import {Menu,ChevronLeft,Home,Login,Logout,Face,ImageSearch} from '@mui/icons-material';
 
@@ -10,6 +10,7 @@ const Header = () => {
   const {isAuthenticated} = useSelector((state)=>state.user)
 const [open,setOpen]=useState(false);
 
+const navigate = useNavigate();
 const disatch = useDispatch();
 const drawerHandler = ()=>{
   setOpen(!open);
@@ -28,6 +29,7 @@ const drawerHandler = ()=>{
 
 const logoutHandler = ()=>{
   disatch(logout())
+  navigate('/')
 }
 
   return (
@@ -52,7 +54,7 @@ const logoutHandler = ()=>{
 </div>
 
 <div className="drawerLogut" style={{padding:'20px'}} onClick={logoutHandler}>
-<a href='/' style={{color:'black',textDecoration:'none'}}><IconButton onClick={drawerHandler} ><Logout /> </IconButton> Logout</a>
+<IconButton onClick={drawerHandler} ><Logout /> </IconButton> Logout
 </div>
 
 <div className="drawerProfile" style={{padding:'20px'}}>

@@ -8,7 +8,7 @@ const fileUpload =require("express-fileupload") ;
 
 const app = express();
 app.use(cors());
-dotenv.config({path:"./config/config.env"});
+//dotenv.config({path:"./config/config.env"});
 
 //middlewares
 

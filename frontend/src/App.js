@@ -28,8 +28,8 @@ function App() {
         <Route path="/" element={loading ? <Loader/> : <Home />} />
         <Route path="/register" element={ <Otp />} />
         <Route path="/register/:email" element={loading ? <Loader/> : <Register />} /> 
-        <Route path="/login" element={loading ? <Loader/> : (isAuthenticated ? <Game/> :<Login/>)} />
-        <Route path="/profile" element={loading ? <Loader/> : (isAuthenticated ? <Profile/> :<Profile/>)} />
+        <Route path="/login" element={loading ? <Loader/> : <Login/>} />
+        <Route path="/profile" element={loading ? <Loader/> : (isAuthenticated ? <Profile/> :<Login/>)} />
         <Route path="/play" element={isAuthenticated ? <Game/> :<Login/>}/>
       </Routes>
     </Router>

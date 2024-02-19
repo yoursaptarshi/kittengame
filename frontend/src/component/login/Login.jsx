@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import './Login.css'; // Import your CSS file
 import { useDispatch } from 'react-redux';
 import { login } from '../../actions/user';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import cardicons from '../../images/card icons.png'
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch()
   const [email, setEmail] = useState('yoursaptarshi@gmail.com');
   const [password, setPassword] = useState('test');
 const logingHandler = ()=>{
   
    dispatch(login(email,password))
-  console.log(email,password)
+  navigate('/play')
 }
   return (
     <div className="login-container">
